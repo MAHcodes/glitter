@@ -1,16 +1,16 @@
-import components/ui/radio.{radio}
-import components/ui/checkbox.{checkbox}
+import components/ui/select.{select}
 import lustre/attribute.{class}
-import lustre/element.{type Element, text}
-import lustre/element/html.{div}
+import lustre/element.{type Element}
+import lustre/element/html.{div, option}
 
 pub fn demo() -> Element(a) {
-  div([class("flex flex-col flex-wrap gap-4 justify-center w-full")], [
-    radio([radio.ghost(radio.Neutral), radio.sm()], [text("Disabled")]),
-    checkbox([checkbox.ghost(checkbox.Neutral), checkbox.sm()], [text("Disabled")]),
-    checkbox([checkbox.ghost(checkbox.Neutral), checkbox.md()], [text("Disabled")]),
-    radio([radio.ghost(radio.Neutral), radio.md()], [text("Disabled")]),
-    checkbox([checkbox.ghost(checkbox.Neutral), checkbox.lg()], [text("Disabled")]),
-    radio([radio.ghost(radio.Neutral), radio.lg()], [text("Disabled")]),
+  div([class("flex flex-col flex-wrap gap-4 justify-center w-full pt-8")], [
+    select([select.outlined(select.Neutral), select.md()], [option([], "Neutral")]),
+    select([select.outlined(select.Primary), select.md()], [option([], "Primary")]),
+    select([select.outlined(select.Secondary), select.md()], [option([], "Secondary")]),
+    select([select.outlined(select.Success), select.md()], [option([], "Success")]),
+    select([select.outlined(select.Info), select.md()], [option([], "Info")]),
+    select([select.outlined(select.Warning), select.md()], [option([], "Warning")]),
+    select([select.outlined(select.Danger), select.md()], [option([], "Danger")]),
   ])
 }
